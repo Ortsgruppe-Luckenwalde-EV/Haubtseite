@@ -44,10 +44,10 @@
         .logo {
             height: 60px; 
             width: auto;
-            border-radius: 50%; /* Das Logo machen wir jetzt rund! */
+            border-radius: 50%; /* Das Logo ist rund */
             margin-right: 20px; 
-            border: 3px solid white; /* Betonte Umrandung */
-            object-fit: cover; /* Stellt sicher, dass das Bild passt */
+            border: 3px solid white; 
+            object-fit: cover; 
         }
         
         /* CONTENT (Inhaltsbereich) */
@@ -68,31 +68,11 @@
             margin-top: 30px;
         }
         
-        /* TABELLE (Für Termine/Regeln) */
-        .schedule-table {
-            width: 100%;
-            border-collapse: collapse; /* Keine doppelten Linien */
-            margin-top: 20px;
-        }
-        .schedule-table th, .schedule-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        .schedule-table th {
-            background-color: var(--color-secondary); /* Dunkelbraun (Holz) */
-            color: white;
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-        }
-        .schedule-table tr:nth-child(even) {
-            background-color: #f9f9f9; /* Leichte Streifenoptik */
-        }
-
-        /* GALERIE (Fiktive Bilder) */
+        /* GALERIE (Fänge/Impressionen) - Stärkerer Fokus! */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+            /* Jetzt 4 Spalten für einen dichteren Galerie-Look */
+            grid-template-columns: repeat(4, 1fr); 
             gap: 15px;
             margin-top: 20px;
         }
@@ -103,13 +83,30 @@
         }
         .gallery-item img {
             width: 100%;
-            height: 150px;
-            object-fit: cover; /* Bilder decken den Bereich ab */
+            /* Höhe etwas angepasst für mehr Platz */
+            height: 120px; 
+            object-fit: cover; 
             display: block;
             transition: transform 0.3s;
         }
         .gallery-item img:hover {
-            transform: scale(1.05); /* Zoom-Effekt beim Darüberfahren */
+            transform: scale(1.1); /* Deutlicherer Zoom-Effekt */
+        }
+        
+        /* Button (Kontakt) */
+        .btn-holz {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 20px; /* Abstand nach oben */
+        }
+        .btn-holz:hover {
+            background-color: #5d4037; 
         }
         
     </style>
@@ -127,53 +124,28 @@
     <div class="content">
         <h2>Petri Heil – Willkommen an unseren Gewässern!</h2>
         <p>
-            Als KAV Luckenwalde Ev pflegen wir die lokale Angelkultur und setzen uns für den Schutz und die Nachhaltigkeit unserer schönen Seen und Flüsse in der Region ein. Werden Sie Teil unserer Gemeinschaft!
+            Als **KAV Luckenwalde Ev** pflegen wir die lokale Angelkultur und setzen uns leidenschaftlich für den Schutz und die Nachhaltigkeit unserer schönen Seen und Flüsse in der Region ein. Werden Sie Teil unserer aktiven Gemeinschaft, tauschen Sie Tipps aus und erleben Sie unvergessliche Stunden am Wasser.
         </p>
 
-        <h2>Wichtige Termine 2026</h2>
-        <table class="schedule-table">
-            <thead>
-                <tr>
-                    <th>Datum</th>
-                    <th>Veranstaltung</th>
-                    <th>Ort</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>01. März</td>
-                    <td>Saisonstart-Treffen</td>
-                    <td>Vereinshaus</td>
-                </tr>
-                <tr>
-                    <td>15. Mai</td>
-                    <td>Hege- und Pflegemaßnahme</td>
-                    <td>Mellensee-Ufer</td>
-                </tr>
-                <tr>
-                    <td>05. Juli</td>
-                    <td>Gemeinschaftliches Nachtangeln</td>
-                    <td>Nuthe-Abschnitt</td>
-                </tr>
-                <tr>
-                    <td>20. September</td>
-                    <td>Abangeln mit Abschlussfest</td>
-                    <td>Vereinshaus</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <h2>Impressionen & Fänge</h2>
+        <h2>🎣 Impressionen & Fänge des KAV</h2>
         <p>
-            Einige Eindrücke von unseren letzten Ausflügen und den schönsten Fängen des Jahres.
+            Bilder sagen mehr als tausend Worte. Hier sehen Sie einige Eindrücke von unseren Gewässern, den besten Fängen und den Momenten der Ruhe, die nur ein Angler kennt.
         </p>
         
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="fisch.jpeg" alt="Fischfang 1"></div>
-            <div class="gallery-item"><img src="fisch.jpeg" alt="Fischfang 2"></div>
-            <div class="gallery-item"><img src="fisch.jpeg" alt="Gewässeransicht"></div>
-            </div>
+            <div class="gallery-item"><img src="fisch.jpeg" alt="Gewässeransicht Frühling"></div>
+            <div class="gallery-item"><img src="fisch.jpeg" alt="Karpfenfang"></div>
+            <div class="gallery-item"><img src="fisch.jpeg" alt="Angelzubehör"></div>
+            <div class="gallery-item"><img src="fisch.jpeg" alt="Sonnenuntergang am See"></div>
+            <div class="gallery-item"><img src="fisch.jpeg" alt="Hechtfang"></div>
+            <div class="gallery-item"><img src="fisch.jpeg" alt="Vereinstreffen"></div>
+        </div>
         
+        <p style="margin-top: 30px;">
+            Haben wir Ihr Interesse geweckt? Für Fragen zur Mitgliedschaft oder zu unseren Gewässern klicken Sie auf den folgenden Link:
+        </p>
+        
+        <a href="#" class="btn-holz">Kontakt aufnehmen</a>
     </div>
 
 </body>

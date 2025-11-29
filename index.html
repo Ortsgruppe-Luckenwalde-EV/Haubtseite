@@ -58,7 +58,19 @@
             background-color: white;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center; 
+            text-align: left; /* Text wieder linksbündig für Homepage-Stil */
+        }
+
+        /* Neue, coolere Haupt-Überschrift für die Homepage */
+        .welcome-title {
+            color: var(--color-secondary); /* Akzentfarbe */
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5em; /* Größer */
+            text-align: center; /* Zentriert */
+            margin-top: 10px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--color-primary);
+            padding-bottom: 15px;
         }
 
         h2 {
@@ -67,28 +79,6 @@
             border-bottom: 3px solid var(--color-background); 
             padding-bottom: 8px;
             margin-top: 30px;
-            text-align: left; 
-        }
-        
-        /* TABELLE */
-        .schedule-table {
-            width: 80%; 
-            border-collapse: collapse; 
-            margin: 40px auto; 
-            text-align: left;
-        }
-        .schedule-table th, .schedule-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-        }
-        .schedule-table th {
-            background-color: var(--color-secondary); 
-            color: white;
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-        }
-        .schedule-table tr:nth-child(even) {
-            background-color: #f9f9f9; 
         }
         
         /* Button */
@@ -101,7 +91,8 @@
             border-radius: 5px;
             font-weight: bold;
             transition: background-color 0.3s;
-            margin-top: 20px;
+            margin-top: 25px; /* Abstand nach oben */
+            margin-bottom: 10px;
         }
         .btn-holz:hover {
             background-color: #5d4037;
@@ -121,40 +112,28 @@
 
     <div class="content">
         
-        <h2>Alle Anglerverbände in Teltow-Fläming</h2>
+        <h2 class="welcome-title">Petri Heil & Willkommen am Fläminger Wasser!</h2>
         
-        <table class="schedule-table">
-            <thead>
-                <tr>
-                    <th>Name des Verbands / Vereins</th>
-                    <th>Ort</th>
-                    <th>Kontakt (Link/Tel)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>&nbsp;</td> 
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td> 
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td> 
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-            </tbody>
-        </table>
+        <p>
+            Herzlich willkommen auf der Homepage der Ortsgruppe Luckenwalde e.V. Wir sind Ihr leidenschaftlicher Anglerverein in der Region Teltow-Fläming. Wir setzen uns für den Naturschutz unserer Gewässer ein und teilen die Freude am Angeln in einer aktiven Gemeinschaft.
+        </p>
+
+        <p>
+            Auf unseren Seiten erfahren Sie alles über unsere Vereinsgewässer, aktuelle Termine, Mitgliedschaften und wie Sie uns erreichen können.
+        </p>
+
+        <a href="#" class="btn-holz">Mehr erfahren</a>
         
-        <p style="margin-top: 30px; text-align: left;">
-            Hier können später alle relevanten Informationen zu den Vereinen im Kreis Teltow-Fläming eingetragen werden.
+        
+        <h2>Aktuelle News & Termine</h2>
+        <p>
+            Hier ist Platz für die neuesten Nachrichten aus dem Verein, geplante Treffen oder Fangmeldungen.
         </p>
         
-        <a href="#" class="btn-holz">Weitere Informationen</a>
+        <p style="margin-top: 40px; border-top: 1px dashed #ccc; padding-top: 20px;">
+            Wir freuen uns, Sie bald an einem unserer Seen oder Flüsse zu treffen!
+        </p>
+
     </div>
 
 </body>

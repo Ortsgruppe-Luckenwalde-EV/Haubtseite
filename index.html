@@ -52,7 +52,7 @@
 
         /* NEUE NAVIGATION (Reiter) */
         .nav-bar {
-            background-color: var(--color-secondary); /* Dunkelbraun für die Leiste */
+            background-color: var(--color-secondary);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
@@ -76,13 +76,17 @@
             padding: 15px 25px;
             font-family: 'Oswald', sans-serif;
             font-size: 1.1em;
-            transition: background-color 0.3s, color 0.3s;
+            /* Für sanfte Animation */
+            transition: background-color 0.3s, transform 0.3s ease-in-out, box-shadow 0.3s;
         }
         
+        /* *** APPLE-STYLE HOVER EFFEKT *** */
         .nav-bar a:hover {
-            background-color: #5d4037; /* Etwas dunklerer Hover-Effekt */
+            background-color: #5d4037; 
+            transform: translateY(-2px); /* Hebt den Reiter subtil an */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Fügen einen weichen Schatten hinzu */
+            border-radius: 4px; 
         }
-        /* ENDE NEUE NAVIGATION */
         
         /* CONTENT (Inhaltsbereich) */
         .content {
@@ -95,6 +99,20 @@
             text-align: left; 
         }
 
+        /* *** KEYFRAMES FÜR TEXT GLOW/PULS *** */
+        @keyframes text-pulse {
+            0% { 
+                text-shadow: 0 0 1px rgba(121, 85, 72, 0.5); 
+            }
+            50% { 
+                /* Hellerer Glow-Effekt */
+                text-shadow: 0 0 5px rgba(121, 85, 72, 0.8), 0 0 10px rgba(121, 85, 72, 0.2); 
+            }
+            100% { 
+                text-shadow: 0 0 1px rgba(121, 85, 72, 0.5); 
+            }
+        }
+
         /* Neue, coole Haupt-Überschrift für die Homepage */
         .welcome-title {
             color: var(--color-secondary); 
@@ -105,6 +123,8 @@
             margin-bottom: 30px;
             border-bottom: 3px solid var(--color-primary);
             padding-bottom: 15px;
+            /* *** ANWENDUNG DER ANIMATION *** */
+            animation: text-pulse 4s infinite alternate ease-in-out; 
         }
 
         h2 {
@@ -135,6 +155,7 @@
             <li><a href="#">Termine</a></li>
         </ul>
     </nav>
+
     <div class="content">
         
         <h2 class="welcome-title">Petri Heil und willkommen in der Ortsgruppe Luckenwalde.</h2>

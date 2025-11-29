@@ -3,110 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAV Luckenwalde Ev - Anglerverein</title>
+    <title>Anglerverein - Ortsgruppe Luckenwalde e.V.</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* FARB PALETTE */
+        /* FARB PALETTE NEU */
         :root {
-            --color-primary: #004d40; /* Dunkles Blaugrün (Wasser) */
-            --color-secondary: #795548; /* Dunkelbraun (Holz/Akzent) */
-            --color-background: #e0f2f1; /* Helles Aquamarin (Basis) */
-            --color-text: #333;
+            --color-primary-blue: #0A3D62; /* Tiefes Wasser-Blau (Hauptfarbe) */
+            --color-secondary-sand: #F7E7CE; /* Sand-Beige (Hintergrund) */
+            --color-accent-red: #D63031; /* Rostrot/Bojen-Farbe (Akzent) */
+            --color-text: #2c3e50;
         }
 
         body {
-            background-color: var(--color-background);
+            background-color: var(--color-secondary-sand); /* Sand-Hintergrund */
             margin: 0;
             padding: 0; 
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Lato', sans-serif; /* Klarer Text */
             color: var(--color-text);
         }
         
-        /* HEADER (Kopfbereich) */
+        /* HEADER (Kopfbereich) - Tiefblau wie das Meer */
         .header-container {
-            background-color: var(--color-primary);
-            padding: 15px 30px; 
+            background-color: var(--color-primary-blue);
+            padding: 20px 40px; 
             display: flex;
             align-items: center; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
         }
         
         h1 {
             color: white; 
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.2em;
+            font-family: 'Merriweather', serif; /* Klassische, ruhige Überschrift */
+            font-size: 2.5em;
             margin: 0;
-            letter-spacing: 1px;
         }
         
         .logo {
-            height: 60px; 
+            height: 70px; /* Logo noch größer */
             width: auto;
-            border-radius: 50%; /* Das Logo ist rund */
-            margin-right: 20px; 
-            border: 3px solid white; 
+            border-radius: 5px; /* Wieder eckig, mehr wie ein Wappen */
+            margin-right: 25px; 
+            border: 4px solid var(--color-accent-red); /* Akzent-Rand um das Logo */
             object-fit: cover; 
         }
         
         /* CONTENT (Inhaltsbereich) */
         .content {
-            padding: 30px; 
-            margin: 30px auto; 
-            max-width: 900px; 
+            padding: 40px; 
+            margin: 40px auto; 
+            max-width: 800px; 
             background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            line-height: 1.6;
         }
 
         h2 {
-            color: var(--color-primary);
-            font-family: 'Oswald', sans-serif;
-            border-bottom: 3px solid var(--color-background); 
-            padding-bottom: 8px;
-            margin-top: 30px;
+            color: var(--color-primary-blue);
+            font-family: 'Merriweather', serif;
+            border-bottom: 2px dashed var(--color-secondary-sand); /* Gestrichelte Trennlinie */
+            padding-bottom: 10px;
+            margin-top: 35px;
         }
         
-        /* GALERIE (Fänge/Impressionen) - Stärkerer Fokus! */
-        .gallery-grid {
-            display: grid;
-            /* Jetzt 4 Spalten für einen dichteren Galerie-Look */
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 15px;
+        /* Layout für Kontaktinformationen */
+        .contact-info {
+            line-height: 2.0;
+            padding: 20px;
+            border-left: 5px solid var(--color-accent-red); /* Roter Streifen als Lesezeichen */
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            margin-top: 25px;
+        }
+
+        .contact-info strong {
+            color: var(--color-primary-blue);
+        }
+        
+        /* Link-Liste am Ende */
+        .link-list {
+            list-style: none;
+            padding: 0;
             margin-top: 20px;
         }
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .link-list li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
         }
-        .gallery-item img {
-            width: 100%;
-            /* Höhe etwas angepasst für mehr Platz */
-            height: 120px; 
-            object-fit: cover; 
-            display: block;
-            transition: transform 0.3s;
+        .link-list li::before {
+            content: '⚓'; /* Anker-Emoji für den maritimen Look */
+            position: absolute;
+            left: 0;
+            color: var(--color-accent-red);
         }
-        .gallery-item img:hover {
-            transform: scale(1.1); /* Deutlicherer Zoom-Effekt */
+        .link-list a {
+            color: var(--color-primary-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link-list a:hover {
+            text-decoration: underline;
         }
         
-        /* Button (Kontakt) */
-        .btn-holz {
-            display: inline-block;
-            background-color: var(--color-secondary);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
+        /* Hinweis auf alte Seiten */
+        .note {
+            background-color: var(--color-accent-red);
+            padding: 10px;
             border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s;
-            margin-top: 20px; /* Abstand nach oben */
-        }
-        .btn-holz:hover {
-            background-color: #5d4037; 
+            color: white;
+            text-align: center;
+            margin-top: 20px;
         }
         
     </style>
@@ -122,30 +132,52 @@
     </div>
 
     <div class="content">
-        <h2>Petri Heil – Willkommen an unseren Gewässern!</h2>
+        
+        <h2>Hallo und Willkommen</h2>
         <p>
-            Als **KAV Luckenwalde Ev** pflegen wir die lokale Angelkultur und setzen uns leidenschaftlich für den Schutz und die Nachhaltigkeit unserer schönen Seen und Flüsse in der Region ein. Werden Sie Teil unserer aktiven Gemeinschaft, tauschen Sie Tipps aus und erleben Sie unvergessliche Stunden am Wasser.
+            auf den Homepage-Seiten des Anglervereins<br>
+            <strong>- Ortsgruppe Luckenwalde e.V. -</strong>
         </p>
 
-        <h2>🎣 Impressionen & Fänge des KAV</h2>
-        <p>
-            Bilder sagen mehr als tausend Worte. Hier sehen Sie einige Eindrücke von unseren Gewässern, den besten Fängen und den Momenten der Ruhe, die nur ein Angler kennt.
+        <p class="note">
+            Die Seiten "Ortsgruppe-Luckenwalde.com" wurden am 5.2.2025 abgeschaltet.
         </p>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="fisch.jpeg" alt="Gewässeransicht Frühling"></div>
-            <div class="gallery-item"><img src="fisch.jpeg" alt="Karpfenfang"></div>
-            <div class="gallery-item"><img src="fisch.jpeg" alt="Angelzubehör"></div>
-            <div class="gallery-item"><img src="fisch.jpeg" alt="Sonnenuntergang am See"></div>
-            <div class="gallery-item"><img src="fisch.jpeg" alt="Hechtfang"></div>
-            <div class="gallery-item"><img src="fisch.jpeg" alt="Vereinstreffen"></div>
+
+        <h2>Aktuelle Erreichbarkeit</h2>
+        <div class="contact-info">
+            Wir sind zur Zeit nur über die Mail: <a href="mailto:jack-holznagel@web.de">jack-holznagel@web.de</a>* zu erreichen.
+            <br><br>
+            oder per Telefon an den:
+            <br>
+            <strong>Vorsitzenden:</strong> Thomas Meske 0160 - 956 11 230
+            <br>
+            <strong>Schatzmeister:</strong> Jack Holznagel 0151 - 651 11 237
+            <br>
+            E-Mail des Schatzmeisters: <a href="mailto:jack-holznagel@web.de">jack-holznagel@web.de</a>*
         </div>
         
-        <p style="margin-top: 30px;">
-            Haben wir Ihr Interesse geweckt? Für Fragen zur Mitgliedschaft oder zu unseren Gewässern klicken Sie auf den folgenden Link:
-        </p>
+        <h2>Postanschrift / Postkasten</h2>
+        <address class="contact-info">
+            Jack Holznagel<br>
+            Anglerverein Ortsgruppe Luckenwalde e.V.<br>
+            Am Vordersee 2<br>
+            14947 Nuthe Urstromtal<br>
+            <a href="mailto:jack-holznagel@web.de">jack-holznagel@web.de</a>*
+        </address>
         
-        <a href="#" class="btn-holz">Kontakt aufnehmen</a>
+        <h2>Weitere Infos</h2>
+        <ul class="link-list">
+            <li><a href="#">Bungalow + Vermietung</a></li>
+            <li><a href="#">Vereinsgewässer</a></li>
+            <li><a href="#">Brandenburger Gewässer</a></li>
+            <li><a href="#">** Wiedergefunden **</a></li>
+            <li><a href="#">NEW ..Galerien..ab 2020</a></li>
+            <li><a href="#">Bildergalerien 2010-2019</a></li>
+            <li><a href="#">Archiv bis Dez. 2023</a></li>
+            <li><a href="#">Gewichtsbestimmung + Mindestmaße BRB</a></li>
+            <li><a href="#">Regelung - Fisch des Jahres</a></li>
+        </ul>
+
     </div>
 
 </body>

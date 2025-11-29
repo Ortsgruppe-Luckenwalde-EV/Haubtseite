@@ -49,6 +49,40 @@
             border: 3px solid white; 
             object-fit: cover; 
         }
+
+        /* *** NEUE NAVIGATION (Reiter) *** */
+        .nav-bar {
+            background-color: var(--color-secondary); /* Dunkelbraun für die Leiste */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .nav-bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-bar li {
+            margin: 0;
+        }
+        
+        .nav-bar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .nav-bar a:hover {
+            background-color: #5d4037; /* Etwas dunklerer Hover-Effekt */
+        }
+        /* *** ENDE NEUE NAVIGATION *** */
         
         /* CONTENT (Inhaltsbereich) */
         .content {
@@ -110,6 +144,13 @@
         <h1>Ortsgruppe Luckenwalde e.V.</h1>
     </div>
 
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="#">Startseite</a></li>
+            <li><a href="#">Ansprechpartner</a></li>
+            <li><a href="#">Termine</a></li>
+        </ul>
+    </nav>
     <div class="content">
         
         <h2 class="welcome-title">Petri Heil und willkommen in der Ortsgruppe Luckenwalde.</h2>

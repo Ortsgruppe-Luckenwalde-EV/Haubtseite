@@ -3,150 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anglerverein - Ortsgruppe Luckenwalde e.V.</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <title>Ortsgruppe Luckenwalde e.V.</title>
     
     <style>
-        /* FARB PALETTE NEU */
-        :root {
-            --color-primary-blue: #0A3D62; /* Tiefes Wasser-Blau (Hauptfarbe) */
-            --color-secondary-sand: #F7E7CE; /* Sand-Beige (Hintergrund) */
-            --color-accent-red: #D63031; /* Rostrot/Bojen-Farbe (Akzent) */
-            --color-text: #2c3e50;
-        }
-
         body {
-            background-color: var(--color-secondary-sand); /* Sand-Hintergrund */
+            /* Hintergrundfarbe der gesamten Seite */
+            background-color: #f0f0f0; 
             margin: 0;
             padding: 0; 
-            font-family: 'Lato', sans-serif; /* Klarer Text */
-            color: var(--color-text);
+            /* Typische Standardschrift und Größe */
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 14px; 
+            color: #000;
         }
         
-        /* HEADER (Kopfbereich) - Tiefblau wie das Meer */
-        .header-container {
-            background-color: var(--color-primary-blue);
-            padding: 20px 40px; 
-            display: flex;
-            align-items: center; 
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
-        }
-        
-        h1 {
-            color: white; 
-            font-family: 'Merriweather', serif; /* Klassische, ruhige Überschrift */
-            font-size: 2.5em;
-            margin: 0;
-        }
-        
-        .logo {
-            height: 70px; /* Logo noch größer */
-            width: auto;
-            border-radius: 5px; /* Wieder eckig, mehr wie ein Wappen */
-            margin-right: 25px; 
-            border: 4px solid var(--color-accent-red); /* Akzent-Rand um das Logo */
-            object-fit: cover; 
-        }
-        
-        /* CONTENT (Inhaltsbereich) */
-        .content {
-            padding: 40px; 
-            margin: 40px auto; 
-            max-width: 800px; 
+        /* Simulierter Baukasten-Rahmen für den Inhalt */
+        .main-container {
+            width: 780px; /* Feste, typische Breite */
+            margin: 10px auto; /* Zentrieren */
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            line-height: 1.6;
+            padding: 10px;
+            border: 1px solid #c0c0c0; /* Heller Rahmen */
+        }
+        
+        /* Logo und Titel imitiert */
+        .original-header {
+            text-align: left;
+            padding: 5px 0;
+            margin-bottom: 5px;
         }
 
+        .original-header h1 {
+            font-size: 1.6em; 
+            color: #000;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            text-decoration: underline; /* Typisches Baukasten-Design */
+        }
+        
+        /* Die graue Linie unter dem Titel (Simuliert die Baukasten-Struktur) */
+        .separator {
+            height: 1px;
+            background-color: #c0c0c0;
+            margin-bottom: 15px;
+        }
+
+        /* Überschriften */
         h2 {
-            color: var(--color-primary-blue);
-            font-family: 'Merriweather', serif;
-            border-bottom: 2px dashed var(--color-secondary-sand); /* Gestrichelte Trennlinie */
-            padding-bottom: 10px;
-            margin-top: 35px;
+            font-size: 1.1em;
+            color: #000;
+            margin-top: 25px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            border-bottom: 1px dashed #ddd; /* Dezente Trennlinie */
+            padding-bottom: 3px;
         }
         
-        /* Layout für Kontaktinformationen */
-        .contact-info {
-            line-height: 2.0;
-            padding: 20px;
-            border-left: 5px solid var(--color-accent-red); /* Roter Streifen als Lesezeichen */
-            background-color: #f8f8f8;
-            border-radius: 5px;
-            margin-top: 25px;
+        /* Kontaktinformationen und Postanschrift */
+        .contact-box {
+            border: 1px solid #e0e0e0;
+            padding: 8px;
+            margin-top: 8px;
+            line-height: 1.5;
         }
 
-        .contact-info strong {
-            color: var(--color-primary-blue);
-        }
-        
-        /* Link-Liste am Ende */
-        .link-list {
+        /* Liste der Menüpunkte (Hauptnavigation) */
+        .original-menu-list {
             list-style: none;
             padding: 0;
-            margin-top: 20px;
+            margin-top: 15px;
         }
-        .link-list li {
-            margin-bottom: 8px;
-            padding-left: 25px;
-            position: relative;
+        .original-menu-list li {
+            margin-bottom: 5px;
+            padding: 3px 0;
         }
-        .link-list li::before {
-            content: '⚓'; /* Anker-Emoji für den maritimen Look */
-            position: absolute;
-            left: 0;
-            color: var(--color-accent-red);
-        }
-        .link-list a {
-            color: var(--color-primary-blue);
+        .original-menu-list a {
+            color: #00008b; 
             text-decoration: none;
-            font-weight: bold;
+            font-weight: normal;
         }
-        .link-list a:hover {
+        .original-menu-list a:hover {
             text-decoration: underline;
         }
+
+        /* Logo und Fließtext */
+        .content-image {
+            float: left; 
+            margin-right: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #000; /* Schwarzer Rahmen wie im Original */
+        }
         
-        /* Hinweis auf alte Seiten */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
         .note {
-            background-color: var(--color-accent-red);
-            padding: 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            color: white;
-            text-align: center;
-            margin-top: 20px;
+            background-color: #ffffe0;
+            padding: 5px;
+            border: 1px solid #c0c0c0;
+            margin: 10px 0;
         }
         
     </style>
 </head>
 <body>
 
-    <div class="header-container">
-        <img class="logo" 
-             src="fisch.jpeg" 
-             alt="Logo KAV Luckenwalde">
-        
-        <h1>KAV Luckenwalde Ev</h1>
-    </div>
+    <div class="main-container">
 
-    <div class="content">
-        
-        <h2>Hallo und Willkommen</h2>
-        <p>
-            auf den Homepage-Seiten des Anglervereins<br>
-            <strong>- Ortsgruppe Luckenwalde e.V. -</strong>
-        </p>
+        <div class="original-header">
+            <h1>Ortsgruppe Luckenwalde e.V.</h1>
+        </div>
+        <div class="separator"></div>
 
+        <div class="clearfix">
+            <img class="content-image" 
+                 src="fisch.jpeg" 
+                 alt="Logo Ortsgruppe Luckenwalde"
+                 width="150" height="150">
+            
+            <h2>H a l l o u n d W i l l k o m m e n</h2>
+            <p>
+                auf den Homepage-Seiten des<br>
+                Anglervereins<br>
+                <strong>- Ortsgruppe Luckenwalde e.V. -</strong>
+            </p>
+        </div>
+        
         <p class="note">
             Die Seiten "Ortsgruppe-Luckenwalde.com" wurden am 5.2.2025 abgeschaltet.
         </p>
 
         <h2>Aktuelle Erreichbarkeit</h2>
-        <div class="contact-info">
-            Wir sind zur Zeit nur über die Mail: <a href="mailto:jack-holznagel@web.de">jack-holznagel@web.de</a>* zu erreichen.
-            <br><br>
+        <div class="contact-box">
+            <p>
+                Wir sind zur Zeit nur über die Mail: <a href="mailto:jack-holznagel@web.de">jack-holznagel@web.de</a>* zu erreichen.
+            </p>
+            
             oder per Telefon an den:
             <br>
             <strong>Vorsitzenden:</strong> Thomas Meske 0160 - 956 11 230
@@ -157,7 +153,7 @@
         </div>
         
         <h2>Postanschrift / Postkasten</h2>
-        <address class="contact-info">
+        <address class="contact-box">
             Jack Holznagel<br>
             Anglerverein Ortsgruppe Luckenwalde e.V.<br>
             Am Vordersee 2<br>
@@ -165,8 +161,8 @@
             <a href="mailto:jack-holznagel@web.de">jack-holznagel@web.de</a>*
         </address>
         
-        <h2>Weitere Infos</h2>
-        <ul class="link-list">
+        <h2>Menüpunkte</h2>
+        <ul class="original-menu-list">
             <li><a href="#">Bungalow + Vermietung</a></li>
             <li><a href="#">Vereinsgewässer</a></li>
             <li><a href="#">Brandenburger Gewässer</a></li>

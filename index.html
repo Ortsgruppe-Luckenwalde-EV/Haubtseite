@@ -3,177 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ortsgruppe Luckenwalde e.V.</title>
+    <title>KAV Luckenwalde Ev - Anglerverein</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
+        /* FARB PALETTE */
+        :root {
+            --color-primary: #004d40; /* Dunkles Blaugrün (Wasser) */
+            --color-secondary: #795548; /* Dunkelbraun (Holz/Akzent) */
+            --color-background: #e0f2f1; /* Helles Aquamarin (Basis) */
+            --color-text: #333;
+        }
+
         body {
-            /* Hintergrundfarbe der gesamten Seite */
-            background-color: #f0f0f0; 
+            background-color: var(--color-background);
             margin: 0;
             padding: 0; 
-            /* Typische Standardschrift und Größe */
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: 14px; 
-            color: #000;
+            font-family: 'Roboto', sans-serif;
+            color: var(--color-text);
         }
         
-        /* Simulierter Baukasten-Rahmen für den Inhalt */
-        .main-container {
-            width: 780px; /* Feste, typische Breite */
-            margin: 10px auto; /* Zentrieren */
-            background-color: white;
-            padding: 10px;
-            border: 1px solid #c0c0c0; /* Heller Rahmen */
+        /* HEADER (Kopfbereich) */
+        .header-container {
+            background-color: var(--color-primary);
+            padding: 15px 30px; 
+            display: flex;
+            align-items: center; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
         }
         
-        /* Logo und Titel imitiert */
-        .original-header {
-            text-align: left;
-            padding: 5px 0;
-            margin-bottom: 5px;
-        }
-
-        .original-header h1 {
-            font-size: 1.6em; 
-            color: #000;
-            font-weight: bold;
+        h1 {
+            color: white; 
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.2em;
             margin: 0;
-            padding: 0;
-            text-decoration: underline; /* Typisches Baukasten-Design */
+            letter-spacing: 1px;
         }
         
-        /* Die graue Linie unter dem Titel (Simuliert die Baukasten-Struktur) */
-        .separator {
-            height: 1px;
-            background-color: #c0c0c0;
-            margin-bottom: 15px;
+        .logo {
+            height: 60px; 
+            width: auto;
+            border-radius: 50%; 
+            margin-right: 20px; 
+            border: 3px solid white; 
+            object-fit: cover; 
+        }
+        
+        /* CONTENT (Inhaltsbereich) */
+        .content {
+            padding: 30px; 
+            margin: 30px auto; 
+            max-width: 900px; 
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center; 
         }
 
-        /* Überschriften */
         h2 {
-            font-size: 1.1em;
-            color: #000;
-            margin-top: 25px;
-            margin-bottom: 5px;
-            font-weight: bold;
-            border-bottom: 1px dashed #ddd; /* Dezente Trennlinie */
-            padding-bottom: 3px;
+            color: var(--color-primary);
+            font-family: 'Oswald', sans-serif;
+            border-bottom: 3px solid var(--color-background); 
+            padding-bottom: 8px;
+            margin-top: 30px;
+            text-align: left; 
         }
         
-        /* Kontaktinformationen und Postanschrift */
-        .contact-box {
-            border: 1px solid #e0e0e0;
-            padding: 8px;
-            margin-top: 8px;
-            line-height: 1.5;
+        /* TABELLE */
+        .schedule-table {
+            width: 80%; 
+            border-collapse: collapse; 
+            margin: 40px auto; 
+            text-align: left;
         }
-
-        /* Liste der Menüpunkte (Hauptnavigation) */
-        .original-menu-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 15px;
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
         }
-        .original-menu-list li {
-            margin-bottom: 5px;
-            padding: 3px 0;
+        .schedule-table th {
+            background-color: var(--color-secondary); 
+            color: white;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
         }
-        .original-menu-list a {
-            color: #00008b; 
+        .schedule-table tr:nth-child(even) {
+            background-color: #f9f9f9; 
+        }
+        
+        /* Button */
+        .btn-holz {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: white;
+            padding: 10px 20px;
             text-decoration: none;
-            font-weight: normal;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 20px;
         }
-        .original-menu-list a:hover {
-            text-decoration: underline;
-        }
-
-        /* Logo und Fließtext */
-        .content-image {
-            float: left; 
-            margin-right: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #000; /* Schwarzer Rahmen wie im Original */
-        }
-        
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-
-        .note {
-            background-color: #ffffe0;
-            padding: 5px;
-            border: 1px solid #c0c0c0;
-            margin: 10px 0;
+        .btn-holz:hover {
+            background-color: #5d4037;
         }
         
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-
-        <div class="original-header">
-            <h1>Ortsgruppe Luckenwalde e.V.</h1>
-        </div>
-        <div class="separator"></div>
-
-        <div class="clearfix">
-            <img class="content-image" 
-                 src="fisch.jpeg" 
-                 alt="Logo Ortsgruppe Luckenwalde"
-                 width="150" height="150">
-            
-            <h2>H a l l o u n d W i l l k o m m e n</h2>
-            <p>
-                auf den Homepage-Seiten des<br>
-                Anglervereins<br>
-                <strong>- Ortsgruppe Luckenwalde e.V. -</strong>
-            </p>
-        </div>
+    <div class="header-container">
+        <img class="logo" 
+             src="fisch.jpeg" 
+             alt="Logo KAV Luckenwalde">
         
-        <p class="note">
-            Die Seiten "Ortsgruppe-Luckenwalde.com" wurden am 5.2.2025 abgeschaltet.
+        <h1>KAV Luckenwalde Ev</h1>
+    </div>
+
+    <div class="content">
+        
+        <h2>Alle Anglerverbände in Teltow-Fläming</h2>
+        
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Name des Verbands / Vereins</th>
+                    <th>Ort</th>
+                    <th>Kontakt (Link/Tel)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&nbsp;</td> 
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td> 
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td> 
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p style="margin-top: 30px; text-align: left;">
+            Hier können später alle relevanten Informationen zu den Vereinen im Kreis Teltow-Fläming eingetragen werden.
         </p>
-
-        <h2>Aktuelle Erreichbarkeit</h2>
-        <div class="contact-box">
-            <p>
-                Wir sind zur Zeit nur über die Mail: <a href="mailto:jack-holznagel@web.de">jack-holznagel@web.de</a>* zu erreichen.
-            </p>
-            
-            oder per Telefon an den:
-            <br>
-            <strong>Vorsitzenden:</strong> Thomas Meske 0160 - 956 11 230
-            <br>
-            <strong>Schatzmeister:</strong> Jack Holznagel 0151 - 651 11 237
-            <br>
-            E-Mail des Schatzmeisters: <a href="mailto:jack-holznagel@web.de">jack-holznagel@web.de</a>*
-        </div>
         
-        <h2>Postanschrift / Postkasten</h2>
-        <address class="contact-box">
-            Jack Holznagel<br>
-            Anglerverein Ortsgruppe Luckenwalde e.V.<br>
-            Am Vordersee 2<br>
-            14947 Nuthe Urstromtal<br>
-            <a href="mailto:jack-holznagel@web.de">jack-holznagel@web.de</a>*
-        </address>
-        
-        <h2>Menüpunkte</h2>
-        <ul class="original-menu-list">
-            <li><a href="#">Bungalow + Vermietung</a></li>
-            <li><a href="#">Vereinsgewässer</a></li>
-            <li><a href="#">Brandenburger Gewässer</a></li>
-            <li><a href="#">** Wiedergefunden **</a></li>
-            <li><a href="#">NEW ..Galerien..ab 2020</a></li>
-            <li><a href="#">Bildergalerien 2010-2019</a></li>
-            <li><a href="#">Archiv bis Dez. 2023</a></li>
-            <li><a href="#">Gewichtsbestimmung + Mindestmaße BRB</a></li>
-            <li><a href="#">Regelung - Fisch des Jahres</a></li>
-        </ul>
-
+        <a href="#" class="btn-holz">Weitere Informationen</a>
     </div>
 
 </body>

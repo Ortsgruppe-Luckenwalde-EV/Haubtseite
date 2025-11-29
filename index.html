@@ -3,31 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ortsgruppe Luckenwalde EV</title>
+    <title>KAV Luckenwalde Ev</title>
     <style>
-        /* Stellt sicher, dass der Hintergrund der gesamten Seite weiß ist */
+        /* 1. Hintergrund der gesamten Seite bleibt weiß, Ränder entfernt */
         body {
             background-color: white;
             margin: 0;
-            padding: 20px; /* Ein kleiner Rand, damit der Inhalt nicht direkt am Fensterrand klebt */
+            padding: 0; 
             font-family: Arial, sans-serif;
         }
-        /* Container für das Logo und den Titel, um sie nebeneinander anzuordnen */
+        
+        /* 2. NEUE Regel: Der Header-Container bekommt den grünen Hintergrund */
         .header-container {
+            /* Hintergrundfarbe auf Grün setzen */
+            background-color: green; 
+            
+            /* Innenabstand hinzufügen, damit Logo/Text nicht am Rand kleben */
+            padding: 15px 20px; 
+            
+            /* Elemente nebeneinander anordnen */
             display: flex;
-            align-items: center; /* Vertikale Ausrichtung in der Mitte */
+            align-items: center; 
         }
-        /* Stil für den Haupttitel */
+        
+        /* 3. Den Haupttitel-Text weiß machen, damit er auf dem grünen Hintergrund lesbar ist */
         h1 {
-            color: green; /* Textfarbe auf Grün setzen */
+            color: white; /* Textfarbe auf Weiß setzen (vorher grün) */
             font-size: 2em;
             margin: 0;
         }
+        
         /* Stil für das Logo */
         .logo {
-            height: 50px; /* Höhe des Logos. Du kannst diesen Wert anpassen */
+            height: 50px; 
             width: auto;
-            margin-right: 15px; /* Abstand zwischen Logo und Text */
+            margin-right: 15px; 
+        }
+        
+        /* NEUER Bereich: Der Inhaltsbereich unter dem Header */
+        .content {
+            /* Hier kommt der weiße Bereich, der unter dem grünen Header liegt */
+            padding: 20px; 
+            background-color: white; 
         }
     </style>
 </head>
@@ -38,8 +55,12 @@
              src="fisch.jpeg" 
              alt="Logo Ortsgruppe Luckenwalde">
         
-        <h1>Ortsgruppe Luckenwalde Erfahrung</h1>
+        <h1>KAV Luckenwalde Ev</h1>
     </div>
 
-    </body>
+    <div class="content">
+        <p>Willkommen auf der Seite des KAV Luckenwalde Ev. Hier folgt bald weiterer Inhalt.</p>
+    </div>
+
+</body>
 </html>

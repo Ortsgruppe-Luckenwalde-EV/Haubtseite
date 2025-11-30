@@ -134,56 +134,17 @@
             padding-bottom: 8px;
             margin-top: 30px;
         }
-
-        /* ==================================== */
-        /* *** RESPONSIVE DESIGN (HANDY-ANSICHT) *** */
-        /* ==================================== */
+        
+        /* RESPONSIVE DESIGN (HANDY-ANSICHT) - (Unverändert übernommen) */
         @media (max-width: 650px) {
-            /* Header: Logo und Titel stapeln */
-            .header-container {
-                flex-direction: column; 
-                padding: 15px 10px;
-            }
-            
-            .logo {
-                height: 40px; 
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-            
-            h1 {
-                font-size: 1.8em; 
-                text-align: center;
-            }
-
-            /* Content: Ränder reduzieren */
-            .content {
-                margin: 15px; 
-                padding: 20px;
-            }
-            
-            /* Navigation: Links stapeln */
-            .nav-bar ul {
-                flex-direction: column; 
-                align-items: stretch; /* Volle Breite der Nav-Bar nutzen */
-            }
-            
-            .nav-bar a {
-                padding: 12px 15px; 
-                text-align: center;
-                /* Entfernt den Lift-Effekt auf Mobilgeräten, da er beim Tippen stören kann */
-                transform: none; 
-            }
-            
-            .nav-bar a:hover {
-                transform: none; 
-            }
-
-            /* Überschriften: Größe für Mobile anpassen */
-            .welcome-title {
-                font-size: 2em; 
-                padding-bottom: 10px;
-            }
+            .header-container { flex-direction: column; padding: 15px 10px; }
+            .logo { height: 40px; margin-right: 0; margin-bottom: 10px; }
+            h1 { font-size: 1.8em; text-align: center; }
+            .content { margin: 15px; padding: 20px; }
+            .nav-bar ul { flex-direction: column; align-items: stretch; }
+            .nav-bar a { padding: 12px 15px; text-align: center; transform: none; }
+            .nav-bar a:hover { transform: none; }
+            .welcome-title { font-size: 2em; padding-bottom: 10px; }
         }
         
     </style>
@@ -201,9 +162,9 @@
     <nav class="nav-bar">
         <ul>
             <li><a href="#">Startseite</a></li>
-            <li><a href="#">Ansprechpartner</a></li>
-            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Vereinsgew-sser/">Vereinsgewässer</a></li>
-            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Termine/">Termine</a></li>
+            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/ansprechpartner/" target="_blank">Ansprechpartner</a></li>
+            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Vereinsgew-sser/" target="_blank">Vereinsgewässer</a></li>
+            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Termine/" target="_blank">Termine</a></li>
         </ul>
     </nav>
 

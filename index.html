@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ortsgruppe Luckenwalde e.V. - Anglerverein</title>
+    <title>Wird bearbeitet - Ortsgruppe Luckenwalde e.V.</title> 
     
     <meta name="google-site-verification" content="1uPlcG-FwYfYHbufDpWkg_zQlgtFXc_Qg14S5ehVZmU" />
     
@@ -12,17 +12,18 @@
     <style>
         :root {
             --color-primary: #004d40;
-            --color-secondary: #795548;
-            --color-background: #e0f2f1;
             --color-text: #333;
         }
 
         body {
-            background-color: var(--color-background);
+            background-color: white; 
             margin: 0;
             padding: 0; 
             font-family: 'Roboto', sans-serif;
             color: var(--color-text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         
         .header-container {
@@ -31,6 +32,7 @@
             display: flex;
             align-items: center; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            flex-shrink: 0;
         }
         
         h1 {
@@ -46,131 +48,58 @@
             width: auto;
             border-radius: 50%; 
             margin-right: 20px; 
-            /* DER WEISSE RAHMEN WURDE ENTFERNT */
-            /* border: 3px solid white; */ 
+            border: 3px solid white; 
             object-fit: cover; 
         }
 
-        .nav-bar {
-            background-color: var(--color-secondary);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        
-        .nav-bar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .content {
+            flex-grow: 1;
             display: flex;
             justify-content: center;
-        }
-        
-        .nav-bar li {
-            margin: 0;
-        }
-        
-        .nav-bar a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1em;
-            transition: background-color 0.3s, transform 0.3s ease-in-out, box-shadow 0.3s;
-        }
-        
-        .nav-bar a:hover {
-            background-color: #5d4037; 
-            transform: translateY(-2px); 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
-            border-radius: 4px; 
-        }
-        
-        .content {
+            align-items: center;
             padding: 30px; 
-            margin: 30px auto; 
-            max-width: 900px; 
-            background-color: white;
+            text-align: center;
+        }
+
+        .maintenance-box {
+            max-width: 600px; 
+            padding: 40px; 
+            background-color: #f7f7f7;
+            border: 2px solid var(--color-primary);
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: left; 
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            color: var(--color-text);
         }
 
-        /* GALLERIE STYLES */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .gallery-item {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery-img {
-            width: 100%;
-            height: 190px;
-            object-fit: cover;
-            display: block;
-        }
-
-        @keyframes text-pulse {
-            0% { 
-                text-shadow: 0 0 1px rgba(121, 85, 72, 0.5); 
-            }
-            50% { 
-                text-shadow: 0 0 5px rgba(121, 85, 72, 0.8), 0 0 10px rgba(121, 85, 72, 0.2); 
-            }
-            100% { 
-                text-shadow: 0 0 1px rgba(121, 85, 72, 0.5); 
-            }
-        }
-
-        .welcome-title {
-            color: var(--color-secondary); 
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.5em; 
-            text-align: center; 
-            margin-top: 10px;
-            margin-bottom: 30px;
-            border-bottom: 3px solid var(--color-primary);
-            padding-bottom: 15px;
-            animation: text-pulse 4s infinite alternate ease-in-out; 
-        }
-
-        h2 {
+        .maintenance-box h2 {
             color: var(--color-primary);
             font-family: 'Oswald', sans-serif;
-            border-bottom: 3px solid var(--color-background); 
-            padding-bottom: 8px;
-            margin-top: 30px;
+            font-size: 2em;
+            margin-top: 0;
         }
         
         @media (max-width: 650px) {
-            .header-container { flex-direction: column; padding: 15px 10px; }
-            .logo { height: 40px; margin-right: 0; margin-bottom: 10px; }
-            h1 { font-size: 1.8em; text-align: center; }
-            .content { margin: 15px; padding: 20px; }
-            .nav-bar ul { flex-direction: column; align-items: stretch; }
-            .nav-bar a { padding: 12px 15px; text-align: center; transform: none; }
-            .nav-bar a:hover { transform: none; }
-            .welcome-title { font-size: 2em; padding-bottom: 10px; }
-            
-            .image-gallery {
-                grid-template-columns: 1fr; 
+            .header-container { 
+                flex-direction: column; 
+                padding: 15px 10px; 
             }
-            .gallery-img {
-                 height: 200px;
+            .logo { 
+                height: 40px; 
+                margin-right: 0; 
+                margin-bottom: 10px; 
+            }
+            h1 { 
+                font-size: 1.8em; 
+                text-align: center; 
+            }
+            
+            .maintenance-box {
+                padding: 30px 20px;
+                max-width: 90%;
+            }
+
+            .maintenance-box h2 {
+                font-size: 1.5em;
             }
         }
         
@@ -180,50 +109,24 @@
 
     <div class="header-container">
         <img class="logo" 
-             src="logo.jpg" 
+             src="fisch.jpeg" 
              alt="Logo KAV Luckenwalde">
         
         <h1>Ortsgruppe Luckenwalde e.V.</h1>
     </div>
 
-    <nav class="nav-bar">
-        <ul>
-            <li><a href="#">Startseite</a></li>
-            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/ansprechpartner/">Ansprechpartner</a></li>
-            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Vereinsgew-sser/">Vereinsgewässer</a></li>
-            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/Termine/">Termine</a></li>
-        </ul>
-    </nav>
-
     <div class="content">
-        
-        <h2 class="welcome-title">Petri Heil und willkommen in der Ortsgruppe Luckenwalde.</h2>
-        
-        <p>
-            Wir sind die Ortsgruppe Luckenwalde e.V. – Ihr Anglerverein in der Region Teltow-Fläming. Wir setzen uns für unsere Gewässer ein und pflegen eine starke, freundschaftliche Gemeinschaft.
-        </p>
-
-        <p>
-            Erfahre über unsere Ansprechpartner, Vereinsgewässer und Termine in der Navigation oben.
-        </p>
-        
-        <div class="image-gallery">
-            
-            <div class="gallery-item">
-                <img src="bild1.jpg" alt="Bunte Boote mit Schnee am Ufer" class="gallery-img">
-            </div>
-            
-            <div class="gallery-item">
-                <img src="bild2.jpg" alt="Stimmungsvoller See bei Sonnenuntergang" class="gallery-img">
-            </div>
-            
-            <div class="gallery-item">
-                <img src="bild3.jpg" alt="Angelruten auf einem Steg" class="gallery-img">
-            </div>
-            
+        <div class="maintenance-box">
+            <h2>Wird bearbeitet!</h2>
+            <p>
+                Diese Seite wird derzeit für dich überarbeitet und optimiert. Wir arbeiten daran, dir bald alle Informationen zur Verfügung zu stellen.
+            </p>
+            <p>
+                <strong>Vielen Dank für deine Geduld!</strong>
+            </p>
         </div>
-
     </div>
 
 </body>
 </html>
+

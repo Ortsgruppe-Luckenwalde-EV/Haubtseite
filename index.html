@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anglerverein Ortsgruppe Luckenwalde e.V.</title>
+    <title>Wartungsarbeiten - Ortsgruppe Luckenwalde e.V.</title>
     <meta name="description"
-        content="Offizielle Website des Anglerverein Ortsgruppe Luckenwalde e.V. - Termine, Gewässer und Informationen für Mitglieder und Interessierte.">
+        content="Offizielle Website des Anglerverein Ortsgruppe Luckenwalde e.V. - Wir arbeiten gerade an der Seite.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;600;700&display=swap"
         rel="stylesheet">
-
     <style>
         * {
             font-family: 'Poppins', sans-serif;
@@ -29,9 +28,13 @@
             background: linear-gradient(135deg, #0a1e2e 0%, #16213e 50%, #0f3460 100%);
             min-height: 100vh;
             position: relative;
-            overflow-x: hidden;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
+        /* Ambient Background Animation */
         body::before {
             content: '';
             position: fixed;
@@ -62,170 +65,61 @@
 
         .content-wrapper {
             position: relative;
-            z-index: 1;
-        }
-
-        .nav-link {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: -100%;
+            z-index: 10;
             width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #1fb9e6, transparent);
-            transition: left 0.4s ease;
-        }
-
-        .nav-link:hover::after {
-            left: 100%;
+            max-width: 800px;
+            padding: 2rem;
         }
 
         .card {
-            background: rgba(20, 30, 48, 0.7);
-            backdrop-filter: blur(10px);
+            background: rgba(20, 30, 48, 0.85);
+            backdrop-filter: blur(20px);
             border: 2px solid rgba(31, 185, 230, 0.4);
-            box-shadow: 0 20px 60px rgba(31, 185, 230, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            color: #e8e8e8;
-        }
-
-        .card:hover {
-            box-shadow: 0 30px 80px rgba(31, 185, 230, 0.4), inset 0 1px 0 rgba(31, 185, 230, 0.2);
-            border-color: rgba(31, 185, 230, 0.8);
-            background: rgba(20, 40, 60, 0.8);
-            transform: translateY(-5px);
-        }
-
-        .btn {
+            box-shadow: 0 0 50px rgba(31, 185, 230, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #01a74a 0%, #01796f 100%);
-            transition: all 0.3s;
+            border-radius: 1.5rem;
         }
 
-        .btn::before {
+        /* Scanning Laser Effect */
+        .card::after {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
-            width: 100%;
+            width: 50%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(31, 185, 230, 0.4), transparent);
-            transition: left 0.5s ease;
+            background: linear-gradient(90deg, transparent, rgba(31, 185, 230, 0.2), transparent);
+            transform: skewX(-20deg);
+            animation: scan 4s infinite linear;
+            pointer-events: none;
         }
 
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn:hover {
-            background: linear-gradient(135deg, #01796f 0%, #005555 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(31, 185, 230, 0.5);
-        }
-
-        .gallery-img {
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            filter: brightness(0.8) saturate(1.2);
-        }
-
-        .gallery-img:hover {
-            transform: scale(1.08) rotateY(-5deg);
-            filter: brightness(1.2) saturate(1.4);
-            box-shadow: 0 0 30px rgba(31, 185, 230, 0.6);
-        }
-
-        .fish-animation {
-            width: 60px;
-            height: 40px;
-            background: radial-gradient(ellipse at 30% 30%, #1fb9e6, #01a74a);
-            border-radius: 50%;
-            position: fixed;
-            filter: blur(1px) drop-shadow(0 0 12px rgba(31, 185, 230, 0.8));
-            clip-path: polygon(70% 0%, 100% 30%, 100% 70%, 70% 100%, 0% 50%);
-            animation: swim-animation 8s ease-in-out infinite;
-        }
-
-        @keyframes swim-animation {
+        @keyframes scan {
             0% {
-                transform: translateX(0) translateY(0) scaleX(1);
-                opacity: 0.6;
+                left: -100%;
             }
 
             50% {
-                opacity: 1;
+                left: 200%;
             }
 
             100% {
-                transform: translateX(100px) translateY(20px) scaleX(-1);
-                opacity: 0.6;
+                left: 200%;
             }
-        }
-
-        @keyframes float-up {
-            0% {
-                transform: translateY(0) rotateX(0);
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-100px) rotateX(45deg);
-                opacity: 0;
-            }
-        }
-
-        .bubble {
-            animation: float-up 2s ease-out forwards;
         }
 
         .glow-text {
             color: #1fb9e6;
-            text-shadow: 0 0 30px rgba(31, 185, 230, 0.5), 0 0 60px rgba(31, 185, 230, 0.2);
+            text-shadow: 0 0 20px rgba(31, 185, 230, 0.6), 0 0 40px rgba(31, 185, 230, 0.3);
         }
 
-        .section-divider {
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #1fb9e6, transparent);
-            margin: 2rem 0;
-            box-shadow: 0 0 15px rgba(31, 185, 230, 0.5);
-        }
-
-        header {
-            background: linear-gradient(135deg, rgba(15, 52, 96, 0.98) 0%, rgba(1, 87, 115, 0.98) 100%) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 3px solid rgba(31, 185, 230, 0.5);
-            box-shadow: 0 10px 40px rgba(31, 185, 230, 0.2);
-        }
-
-        nav {
-            background: linear-gradient(135deg, rgba(26, 60, 110, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid rgba(31, 185, 230, 0.3);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        footer {
-            background: linear-gradient(135deg, rgba(15, 52, 96, 0.98) 0%, rgba(1, 87, 115, 0.98) 100%) !important;
-            backdrop-filter: blur(10px);
-            border-top: 3px solid rgba(31, 185, 230, 0.5);
-            box-shadow: 0 -10px 40px rgba(31, 185, 230, 0.2);
-        }
-
-        /* Typewriter Effekt */
+        /* Typewriter Effect */
         .typewriter {
             overflow: hidden;
             border-right: .15em solid #1fb9e6;
             white-space: nowrap;
-            margin: 10px 0;
+            margin: 0 auto;
             letter-spacing: .10em;
             width: fit-content;
             animation:
@@ -254,258 +148,132 @@
                 border-color: #1fb9e6;
             }
         }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(31, 185, 230, 0.4);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(31, 185, 230, 0.4);
+        }
+
+        /* Tool Icon Animation */
+        .tool-icon {
+            animation: float-tools 4s ease-in-out infinite;
+        }
+
+        @keyframes float-tools {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+        }
     </style>
 </head>
 
-<body class="min-h-screen">
+<body class="text-white">
+
+    <!-- Particle Container -->
+    <div id="particles" class="particles"></div>
+
     <div class="content-wrapper">
-        <!-- Fish Animation Elements -->
-        <div class="fish-animation" style="top: 20%; left: 5%;"></div>
-        <div class="fish-animation" style="top: 30%; right: 10%; animation-delay: 2s;"></div>
-        <div class="fish-animation" style="bottom: 25%; left: 15%; animation-delay: 4s;"></div>
-        <div class="fish-animation" style="bottom: 15%; right: 20%; animation-delay: 6s;"></div>
+        <div class="card p-8 md:p-16 text-center">
 
-        <!-- Header -->
-        <header class="bg-[#0f3460]/90 text-white py-4 px-6 shadow-lg">
-            <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-                <div
-                    class="flex flex-col md:flex-row items-center gap-2 md:gap-4 w-full md:w-auto text-center md:text-left">
-                    <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold glow-text leading-tight">
-                        Ortsgruppe Luckenwalde e.V.</h1>
-                </div>
-                <div class="text-xs sm:text-sm md:text-base text-center md:text-right flex-shrink-0">
-                    <p>Gegründet 1952</p>
-                    <p>Mitglied im Landesanglerverband Brandenburg</p>
-                </div>
+            <!-- Animated Icon -->
+            <div class="mb-10 relative inline-block">
+                <div class="absolute inset-0 bg-[#1fb9e6] rounded-full blur-[40px] opacity-20 animate-pulse"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 mx-auto text-[#1fb9e6] relative z-10 tool-icon"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
             </div>
-        </header>
 
-        <!-- Navigation -->
-        <nav
-            class="bg-[#1a3c6e]/95 backdrop-blur-md text-white shadow-lg border-b border-[#1fb9e6]/40 sticky top-0 z-50">
-            <div class="container mx-auto px-6">
-                <ul class="flex flex-col md:flex-row justify-center md:justify-start gap-1 md:gap-0">
-                    <li class="w-full md:w-auto">
-                        <a href="#"
-                            class="block py-2 md:py-3 px-4 nav-link font-medium text-center md:text-left">Startseite</a>
-                    </li>
-                    <li class="w-full md:w-auto">
-                        <a href="https://ortsgruppe-luckenwalde-ev.github.io/ansprechpartner/"
-                            class="block py-2 md:py-3 px-4 nav-link font-medium text-center md:text-left">Ansprechpartner</a>
-                    </li>
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 glow-text typewriter">
+                Wird bearbeitet!
+            </h1>
 
-                    <li class="w-full md:w-auto">
-                        <a href="https://ortsgruppe-luckenwalde-ev.github.io/termine/"
-                            class="block py-2 md:py-3 px-4 nav-link font-medium text-center md:text-left">Termine</a>
-                    </li>
-                </ul>
+            <div class="space-y-6 text-xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed">
+                <p>
+                    Diese Seite wird derzeit modernisiert und optimiert.
+                </p>
+                <p>
+                    Wir arbeiten mit Hochdruck daran, dir bald ein noch besseres Erlebnis zu bieten.
+                </p>
+
+                <div class="h-px bg-gradient-to-r from-transparent via-[#1fb9e6] to-transparent my-8 opacity-50"></div>
+
+                <p class="text-[#1fb9e6] font-medium text-2xl tracking-wide">
+                    Vielen Dank für Dein Verständnis!
+                </p>
             </div>
-        </nav>
 
-        <!-- Main Content -->
-        <main class="container mx-auto px-4 py-8 md:py-12">
-            <div class="card p-6 md:p-12 max-w-4xl mx-auto rounded-lg">
-                <div class="inline-block mb-6">
-                    <h2 class="text-2xl md:text-3xl font-bold text-[#1fb9e6] typewriter glow-text">
-                        Petri Heil und willkommen!
-                    </h2>
-                </div>
-
-                <div class="space-y-6 text-lg leading-relaxed text-[#e8e8e8]">
-                    <p>
-                        Unser Anglerverein vereint passionierte Naturfreunde aus Luckenwalde und Umgebung.
-                        Wir setzen uns aktiv für den Gewässerschutz und eine starke Gemeinschaft ein.
-                    </p>
-                    <p class="font-semibold text-[#1fb9e6]">
-                        Auf dieser Internetseite finden Sie alle wichtigen Informationen rund um unseren Verein.
-                    </p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-                        <div class="card p-6 rounded-xl border border-white/5 bg-black/20">
-                            <h3 class="text-xl font-bold text-[#1fb9e6] mb-3">🎣 Mitgliedschaft</h3>
-                            <p class="text-sm mb-4">Werde Teil unserer Gemeinschaft und genieße Zugang zu exklusiven
-                                Gewässern.</p>
-                            <a href="https://ortsgruppe-luckenwalde-ev.github.io/ansprechpartner/"
-                                class="btn inline-block px-5 py-2 rounded-lg text-white font-bold text-sm">Jetzt
-                                anfragen</a>
-                        </div>
-                    </div>
-
-                    <div class="card p-6 rounded-xl border border-white/5 bg-black/20 mt-8">
-                        <h3 class="text-xl font-bold text-[#1fb9e6] mb-3">📱 WhatsApp Gruppe</h3>
-                        <div class="flex flex-col md:flex-row gap-6 items-center">
-                            <div class="w-full md:w-1/3">
-                                <div
-                                    class="bg-white/5 rounded-lg border border-white/10 flex items-center justify-center overflow-hidden">
-                                    <img src="../assets/img/whatsapp-qr.png" alt="WhatsApp QR Code"
-                                        class="w-full h-auto object-cover rounded-lg">
-                                </div>
-                            </div>
-                            <div class="w-full md:w-2/3">
-                                <p class="text-sm mb-4">
-                                    Wir haben eine WhatsApp-Gruppe für unsere Mitglieder!
-                                    Hier erfährst du das Neueste direkt auf dein Handy.
-                                </p>
-                                <p class="text-sm font-bold text-[#e8e8e8] mb-2">
-                                    Du möchtest aufgenommen werden?
-                                </p>
-                                <p class="text-sm mb-4">
-                                    Bitte rufe unseren Ansprechpartner an, um dich hinzufügen zu lassen.
-                                </p>
-                                <a href="https://ortsgruppe-luckenwalde-ev.github.io/ansprechpartner/"
-                                    class="btn inline-block px-5 py-2 rounded-lg text-white font-bold text-sm">
-                                    Kontakt aufnehmen
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Karpfen-Cup Section -->
-                    <div class="card p-6 rounded-xl border border-white/5 bg-black/20 mt-8">
-                        <h3 class="text-xl font-bold text-[#1fb9e6] mb-3">🏆 Karpfen-Cup</h3>
-                        <p class="text-sm mb-4 text-[#e8e8e8]">
-                            Einmal jährlich veranstalten wir unseren großen Karpfen-Cup!
-                            Hier messen sich unsere Mitglieder im freundschaftlichen Wettstreit um den schwersten Fang.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                            <!-- Carp Cup Logo -->
-                            <div class="rounded-lg overflow-hidden flex items-center justify-center">
-                                <img src="https://raw.githubusercontent.com/Ortsgruppe-Luckenwalde-EV/Haubtseite/2bdbac940bbbc84dc1f10beb700a0851b7b7a444/karpfen%20cup.png"
-                                    alt="Karpfen-Cup Logo"
-                                    class="w-full h-auto object-contain hover:scale-105 transition-transform duration-300">
-                            </div>
-                            <div
-                                class="bg-white/5 rounded-lg border border-white/10 h-48 flex items-center justify-center text-gray-400 italic flex-col gap-2">
-                                <span class="text-2xl">🏆</span>
-                                <span>Bild: Siegerehrung</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Arbeitseinsätze Section -->
-                    <div class="card p-6 rounded-xl border border-white/5 bg-black/20 mt-8">
-                        <h3 class="text-xl font-bold text-[#1fb9e6] mb-3">🛠️ Arbeitseinsätze</h3>
-                        <p class="text-sm mb-4 text-[#e8e8e8]">
-                            Gemeinsam pflegen wir unsere Gewässer und das Vereinsgelände.
-                            Regelmäßige Arbeitseinsätze sorgen dafür, dass alles in bestem Zustand bleibt.
-                        </p>
-                        <div class="bg-[#01a74a]/10 border border-[#01a74a]/30 rounded-lg p-4 mt-2">
-                            <p class="text-sm font-bold text-[#e8e8e8] flex items-center gap-2">
-                                🌭 Für das leibliche Wohl ist immer gesorgt!
-                            </p>
-                            <p class="text-xs text-gray-300 mt-1">
-                                Nach getaner Arbeit stärken wir uns gemeinsam mit leckerem Essen und Getränken.
-                            </p>
-                        </div>
-                    </div>
-
-                    <h3 class="text-2xl md:text-3xl font-bold text-[#1fb9e6] pt-8 mb-4 glow-text">Impressionen</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <img src="bild1.jpg" alt="See" class="rounded-lg h-40 w-full object-cover gallery-img">
-                        <img src="bild2.jpg" alt="Verein" class="rounded-lg h-40 w-full object-cover gallery-img">
-                        <img src="bild3.jpg" alt="Fang" class="rounded-lg h-40 w-full object-cover gallery-img">
-                    </div>
-                </div>
+            <div class="mt-12 text-sm text-gray-500 font-mono">
+                &copy; 2026 Anglerverein Ortsgruppe Luckenwalde e.V.
             </div>
-        </main>
-
-        <!-- Footer -->
-        <footer class="bg-[#0f3460]/90 text-white py-8 mt-12 backdrop-blur-sm">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="hover:translate-y-[-5px] transition-transform hover:text-[#1fb9e6]">
-                        <h3 class="text-lg font-bold mb-4 text-[#1fb9e6]">📍 Kontakt</h3>
-                        <p class="text-gray-300">Anglerverein Ortsgruppe Luckenwalde e.V.</p>
-                        <p class="text-gray-300">Am Vordersee 2</p>
-                        <p class="text-gray-300">14947 Nuthe Urstromtal</p>
-                        <p class="mt-2 text-gray-300">jack-holznagel@web.de</p>
-                    </div>
-                    <div class="hover:translate-y-[-5px] transition-transform">
-                        <h3 class="text-lg font-bold mb-4 text-[#1fb9e6]">🔗 Schnellzugriff</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#"
-                                    class="text-gray-300 hover:text-[#1fb9e6] hover:underline transition">Startseite</a>
-                            </li>
-                            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/ansprechpartner/"
-                                    class="text-gray-300 hover:text-[#1fb9e6] hover:underline transition">Ansprechpartner</a>
-                            </li>
-
-                            <li><a href="https://ortsgruppe-luckenwalde-ev.github.io/termine/"
-                                    class="text-gray-300 hover:text-[#1fb9e6] hover:underline transition">Termine</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-                <div class="border-t border-[#1fb9e6]/30 mt-8 pt-6 text-center text-sm text-gray-400">
-                    <p>&copy; 2026 Anglerverein Ortsgruppe Luckenwalde e.V. - Alle Rechte vorbehalten.</p>
-                </div>
-            </div>
-        </footer>
+        </div>
     </div>
 
     <!-- Scripts -->
-    <script>
-        // Enhanced bubble effect on click
-        document.body.addEventListener('click', function (e) {
-            const bubble = document.createElement('div');
-            bubble.className = 'bubble fixed rounded-full bg-gradient-to-br from-[#1fb9e6] to-[#01a74a] pointer-events-none';
-            bubble.style.left = `${e.clientX}px`;
-            bubble.style.top = `${e.clientY}px`;
-            bubble.style.width = '15px';
-            bubble.style.height = '15px';
-            bubble.style.transform = 'translate(-50%, -50%) scale(0)';
-            bubble.style.opacity = '0.7';
-            bubble.style.boxShadow = '0 0 15px rgba(31, 185, 230, 0.6)';
-
-            document.body.appendChild(bubble);
-
-            setTimeout(() => {
-                bubble.style.transform = 'translate(-50%, -50%) scale(1)';
-                bubble.style.opacity = '0';
-            }, 10);
-
-            setTimeout(() => {
-                bubble.remove();
-            }, 2000);
-        });
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script>
-        // GSAP animations
-        document.addEventListener('DOMContentLoaded', () => {
-            // Staggered nav animation
-            gsap.from("nav li", {
-                duration: 0.8,
-                y: 50,
-                opacity: 0,
-                stagger: 0.15,
-                ease: "back.out(1.7)"
-            });
+        // Particle System
+        const particleContainer = document.getElementById('particles');
+        const particleCount = 50;
 
-            // Card entrance
-            gsap.from(".card", {
-                duration: 0.6,
-                scale: 0.95,
-                opacity: 0,
-                ease: "power2.out",
-                delay: 0.1,
-                onComplete: function () {
-                    gsap.set(".card", { opacity: 1, scale: 1 });
-                }
-            });
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
 
-            // Fish swimming animation
-            gsap.to(".fish-animation", {
-                duration: 12,
-                x: "random(-200, 200, 10)",
-                y: "random(-100, 100, 10)",
-                rotation: "random(-25, 25)",
+            const size = Math.random() * 4 + 1;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            // Random start position
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+
+            particleContainer.appendChild(particle);
+
+            // Animate with GSAP
+            gsap.to(particle, {
+                y: `random(-100, 100)`,
+                x: `random(-100, 100)`,
+                duration: `random(3, 8)`,
+                opacity: `random(0.1, 0.7)`,
+                scale: `random(0.5, 1.5)`,
                 repeat: -1,
-                repeatRefresh: true,
-                ease: "sine.inOut"
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: `random(0, 5)`
             });
+        }
+
+        // Card Entrance
+        gsap.from(".card", {
+            duration: 1.5,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out",
+            delay: 0.2
         });
+
+
     </script>
 </body>
 
